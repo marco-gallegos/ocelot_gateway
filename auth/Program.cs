@@ -21,6 +21,10 @@ namespace auth
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureAppConfiguration(config =>
+                {
+                    config.AddJsonFile("appsettings.json");
+                    config.AddEnvironmentVariables();
                 });
     }
 }
